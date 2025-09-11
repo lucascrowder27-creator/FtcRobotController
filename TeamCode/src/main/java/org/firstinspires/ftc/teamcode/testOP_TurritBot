@@ -24,7 +24,8 @@ import java.util.concurrent.TimeUnit;
 public class RobotAutoDriveToAprilTagOmni extends LinearOpMode
 {
     // Adjust these numbers to suit your robot.
-    final double PitchOffset = 12.0; //  this is how high above the target the turrit will aim
+    final double PitchOffset = 0.0; //  this is how high above the target the turrit will aim
+    final double BearingOffset = 0.0; //  this is how far to the right the target the turrit will aim
 
     //  Set the GAIN constants to control the relationship between the measured position error, and how much power is
     //  applied to the drive motors to correct the error.
@@ -183,7 +184,7 @@ public class RobotAutoDriveToAprilTagOmni extends LinearOpMode
 
                 
                 double  pitchError    = desiredTag.ftcPose.pitch - PitchOffset;
-                double  bearingError        = desiredTag.ftcPose.bearing;
+                double  bearingError  = desiredTag.ftcPose.bearing - BearingOffset;
 
                 // Use the speed and turn "gains" to calculate how we want the robot to move.
                 aim  = Range.clip(pitch Error * PITCH_GAIN, -MAX_AUTO_PITCH, MAX_AUTO_PITCH);
