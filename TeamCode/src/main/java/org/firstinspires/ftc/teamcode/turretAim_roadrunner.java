@@ -99,6 +99,8 @@ public class BasicOmniOpMode_Linear extends LinearOpMode {
             double target_heading = Math.tan( turret_offset_y / distance_x);
             double Turret_heading = myPose.getHeading() - target heading;
 
+            // TODO wright code to rotate turret to Turret_heading
+
 
 
           
